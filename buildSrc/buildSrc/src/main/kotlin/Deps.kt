@@ -55,6 +55,9 @@ object Deps {
             val material = "androidx.compose.material:material:$VERSION"
             val iconsExt = "androidx.compose.material:material-icons-extended:$VERSION"
             val tooling = "androidx.compose.ui:ui-tooling:$VERSION"
+            val debugManifest = "androidx.compose.ui:ui-test-manifest:$VERSION"
+            val composeTestRule = "androidx.compose.ui:ui-test-junit4:$VERSION"
+
         }
     }
 

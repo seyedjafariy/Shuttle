@@ -31,6 +31,10 @@ android {
     composeOptions {
         kotlinCompilerExtensionVersion = "1.1.1"
     }
+    defaultConfig {
+        testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+    }
+
 }
 
 dependencies {
@@ -42,6 +46,7 @@ dependencies {
     implementation(Deps.AndroidX.Compose.material)
     implementation(Deps.AndroidX.Compose.iconsExt)
     implementation(Deps.AndroidX.Compose.tooling)
+    debugImplementation(Deps.AndroidX.Compose.debugManifest)
     implementation(Deps.Coil.composeCoil)
 
     implementation(Deps.ArkIvanov.MVIKotlin.mvikotlin)
@@ -66,4 +71,6 @@ dependencies {
     implementation(Deps.Ktor.common)
 
     implementation(Deps.JetBrains.Kotlin.datetime)
+
+    androidTestImplementation(Deps.AndroidX.Compose.composeTestRule)
 }
