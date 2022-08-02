@@ -3,12 +3,14 @@
 
 package com.seyedjafariy.shuttle.ui.main
 
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.material.*
 import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.platform.testTag
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import com.seyedjafariy.shuttle.R
@@ -67,7 +69,12 @@ fun LaunchFilterDialog(
 
                 item {
 
-                    Row(Modifier.fillMaxWidth()) {
+                    Row(
+                        Modifier
+                            .fillMaxWidth()
+                            .clickable {
+                                launchFilterState = LaunchOperationState.Disabled
+                            }) {
                         Text(
                             text = stringResource(id = R.string.disabled), modifier = Modifier
                                 .weight(1F)
@@ -87,7 +94,12 @@ fun LaunchFilterDialog(
 
                 item {
 
-                    Row(Modifier.fillMaxWidth()) {
+                    Row(
+                        Modifier
+                            .fillMaxWidth()
+                            .clickable {
+                                launchFilterState = LaunchOperationState.ONLY_SUCCESSFUL
+                            }) {
                         Text(
                             text = stringResource(R.string.only_successful), modifier = Modifier
                                 .weight(1F)
@@ -107,7 +119,12 @@ fun LaunchFilterDialog(
 
                 item {
 
-                    Row(Modifier.fillMaxWidth()) {
+                    Row(
+                        Modifier
+                            .fillMaxWidth()
+                            .clickable {
+                                launchFilterState = LaunchOperationState.ONLY_FAILED
+                            }) {
                         Text(
                             text = stringResource(id = R.string.only_failed), modifier = Modifier
                                 .weight(1F)
@@ -134,7 +151,12 @@ fun LaunchFilterDialog(
                 }
 
                 item {
-                    Row(Modifier.fillMaxWidth()) {
+                    Row(
+                        Modifier
+                            .fillMaxWidth()
+                            .clickable {
+                                dateSortingState = DateSortingState.ASC
+                            }) {
                         Text(
                             text = stringResource(id = R.string.ascending), modifier = Modifier
                                 .weight(1F)
@@ -153,7 +175,12 @@ fun LaunchFilterDialog(
                 }
 
                 item {
-                    Row(Modifier.fillMaxWidth()) {
+                    Row(
+                        Modifier
+                            .fillMaxWidth()
+                            .clickable {
+                                dateSortingState = DateSortingState.DESC
+                            }) {
                         Text(
                             text = stringResource(id = R.string.descending), modifier = Modifier
                                 .weight(1F)
@@ -166,13 +193,23 @@ fun LaunchFilterDialog(
                             },
                             modifier = Modifier
                                 .weight(.2F)
-                                .align(Alignment.CenterVertically),
+                                .align(Alignment.CenterVertically)
+                                .testTag("DESC-BUTTON"),
                         )
                     }
                 }
 
                 item {
-                    Row(Modifier.fillMaxWidth()) {
+                    Row(
+                        Modifier
+                            .fillMaxWidth()
+                            .clickable {
+                                dateFiltering = if (dateFiltering == DateFilterState.Off) {
+                                    DateFilterState.On(spaceXYearOptions.first())
+                                } else {
+                                    DateFilterState.Off
+                                }
+                            }) {
                         Text(
                             text = stringResource(id = R.string.year), modifier = Modifier
                                 .weight(1F)
@@ -181,10 +218,10 @@ fun LaunchFilterDialog(
                         Switch(
                             checked = dateFiltering is DateFilterState.On,
                             onCheckedChange = {
-                                if (it) {
-                                    dateFiltering = DateFilterState.On(spaceXYearOptions.first())
+                                dateFiltering = if (it) {
+                                    DateFilterState.On(spaceXYearOptions.first())
                                 } else {
-                                    dateFiltering = DateFilterState.Off
+                                    DateFilterState.Off
                                 }
                             },
                             modifier = Modifier

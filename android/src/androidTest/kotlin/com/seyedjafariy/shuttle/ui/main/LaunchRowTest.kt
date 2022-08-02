@@ -12,7 +12,6 @@ import org.junit.Assert
 import org.junit.Rule
 import org.junit.Test
 import org.junit.runner.RunWith
-import java.util.concurrent.CountDownLatch
 
 @RunWith(AndroidJUnit4::class)
 class LaunchRowTest {
@@ -34,8 +33,6 @@ class LaunchRowTest {
 
     @Test
     fun when_social_links_are_not_empty_clicks_on_row_fire_callback() {
-        val latch = CountDownLatch(1)
-
         val sampleLaunch = createLaunchState(
             socialLinks = setOf(LaunchState.SocialLink.YT("sample"))
         )
@@ -43,12 +40,9 @@ class LaunchRowTest {
         composeActivityRule.setContent {
             LaunchRow(launch = sampleLaunch, openLaunchOptions = {
                 Assert.assertEquals(sampleLaunch, it)
-                latch.countDown()
             })
         }
 
         composeActivityRule.onNodeWithText(sampleLaunch.name).performClick()
-
-        latch.await()
     }
 }
