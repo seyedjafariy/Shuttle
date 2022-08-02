@@ -1,0 +1,27 @@
+<resources>
+    <string name="app_name">Shuttle</string>
+    <string name="mission">Mission:</string>
+    <string name="date_time">Date/Time:</string>
+    <string name="rocket">Rocket:</string>
+    <string name="days_since_now">Days since now:</string>
+    <string name="days_from_now">Days from now:</string>
+    <string name="rocket_name_type_template">%s / %s</string>
+    <string name="days_from_now_template">+ %d</string>
+    <string name="days_since_template">- %d</string>
+    <string name="date_time_template">%s at %s</string>
+    <string name="company_info">%s was founded by %s in %s. It has now %d employees, %d launch sites, and is valued at USD %s</string>
+    <string name="spacex">SpaceX</string>
+    <string name="company_section_title">COMPANY</string>
+    <string name="launches_section_title">LAUNCHES</string>
+    <string name="submit">Submit</string>
+    <string name="filters">Filters</string>
+    <string name="launch_operation_State">Launch operation state</string>
+    <string name="disabled">Disabled</string>
+    <string name="only_successful">Only successful</string>
+    <string name="only_failed">Only failed</string>
+    <string name="sort_by_date">Sort by date</string>
+    <string name="ascending">Ascending</string>
+    <string name="descending">Descending</string>
+    <string name="year">Year</string>
+    <string name="more_on_this_launch">More on this launch:</string>
+</resources>

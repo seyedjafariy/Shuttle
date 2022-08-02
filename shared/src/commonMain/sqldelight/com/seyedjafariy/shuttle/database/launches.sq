@@ -1,0 +1,31 @@
+CREATE TABLE IF NOT EXISTS launches (
+    rowIndex INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
+    id TEXT UNIQUE NOT NULL,
+    name TEXT NOT NULL,
+    youtube TEXT,
+    article TEXT,
+    wikipedia TEXT,
+    small_image TEXT,
+    large_image TEXT,
+    rocket_id TEXT NOT NULL,
+    rocket_name TEXT NOT NULL,
+    rocket_type TEXT NOT NULL,
+    successful TEXT NOT NULL,
+    date TEXT NOT NULL,
+    upcoming INTEGER AS Boolean NOT NULL
+);
+
+insert:
+INSERT OR REPLACE INTO launches
+(id, name, youtube, article, wikipedia, small_image, large_image, rocket_id, rocket_name, rocket_type, successful, date, upcoming)
+VALUES
+(?, ?,?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?);
+
+getAll:
+SELECT * FROM launches;
+
+getAllWithIds:
+SELECT * FROM launches
+WHERE id IN ?;
+
+

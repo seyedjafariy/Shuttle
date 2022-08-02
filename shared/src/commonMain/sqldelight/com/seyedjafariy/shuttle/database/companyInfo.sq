@@ -1,0 +1,19 @@
+CREATE TABLE company_info (
+    rowIndex INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
+    id TEXT UNIQUE NOT NULL,
+    name TEXT NOT NULL,
+    founder TEXT NOT NULL,
+    founded INTEGER NOT NULL,
+    employees INTEGER NOT NULL,
+    launchSites INTEGER NOT NULL,
+    valuation INTEGER NOT NULL
+);
+
+insert:
+INSERT OR REPLACE INTO company_info
+(id, name, founder, founded, employees, launchSites, valuation)
+VALUES (?, ?, ?, ?, ?, ?, ?);
+
+get:
+SELECT * FROM company_info
+LIMIT 1;
