@@ -26,7 +26,7 @@ fun MainScreenTopAppBar(filterClicks: () -> Unit) {
                 .fillMaxWidth()
                 .padding(horizontal = 8.dp)
         ) {
-            Text(stringResource(id = R.string.spacex), modifier = Modifier.align(Alignment.Center), textAlign = TextAlign.Center)
+            Text(stringResource(id = R.string.app_name), modifier = Modifier.align(Alignment.Center), textAlign = TextAlign.Center)
             Icon(
                 imageVector = Icons.Default.FilterList,
                 "Filters",

@@ -10,7 +10,6 @@
     <string name="days_since_template">- %d</string>
     <string name="date_time_template">%s at %s</string>
     <string name="company_info">%s was founded by %s in %s. It has now %d employees, %d launch sites, and is valued at USD %s</string>
-    <string name="spacex">SpaceX</string>
     <string name="company_section_title">COMPANY</string>
     <string name="launches_section_title">LAUNCHES</string>
     <string name="submit">Submit</string>

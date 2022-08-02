@@ -12,9 +12,9 @@ fun createLaunchState(socialLinks: Set<LaunchState.SocialLink> = emptySet()) = L
     "launch",
     null,
     Icons.Default.Add,
-    StringState(R.string.spacex),
-    StringState(R.string.spacex),
-    StringState(R.string.spacex),
+    StringState(R.string.app_name),
+    StringState(R.string.app_name),
+    StringState(R.string.app_name),
     "0",
     socialLinks,
 )
