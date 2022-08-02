@@ -23,8 +23,11 @@ The app is a very simple single screen app that just loads:
 
 The purpose of the app is to play around with the SpaceX REST API and show case some of my learnings about other tools on Kotlin multiplatform and Android development.
 
-//App screens
 
+|     | Main        | Filters | Social Links |
+| --  | ----------- | --------| --           |
+|Light| <img width="150" src="assets/main-light.jpg">| <img width="150" src="assets/filter-light.jpg">| <img width="150" src="assets/launch-social-light.jpg">|
+|Dark | <img width="150" src="assets/main-dark.jpg">| <img width="150" src="assets/filter-dark.jpg">| <img width="150" src="assets/launch-social-dark.jpg">|
 ## Decisions
 While developing the this tiny app I had to make some decisions that might make it different than yours:
 1. The app is going to be kept the same size and I'm not planning to add more screens or features. This is allows me to iterate faster and try out some other ideas.
@@ -44,8 +47,3 @@ While developing the this tiny app I had to make some decisions that might make 
 ## Contribution
 All this is not to block you from contributing, feel free to post issues, PRs, even fork and copy for yourself.
 Would love to see what you have in mind about this project.
-
-|     | Main        | Filters | Social Links |
-| --  | ----------- | --------| --           |
-|Light| <img width="150" src="assets/main-light.jpg">| <img width="150" src="assets/filter-light.jpg">| <img width="150" src="assets/launch-social-light.jpg">|
-|Dark | <img width="150" src="assets/main-dark.jpg">| <img width="150" src="assets/filter-dark.jpg">| <img width="150" src="assets/launch-social-dark.jpg">|
